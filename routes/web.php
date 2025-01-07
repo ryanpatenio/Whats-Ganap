@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\GanapController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,7 @@ Route::post('/_register',[AuthController::class,'_register'])->name('_register')
 Route::post('/_login',[AuthController::class,'_login'])->name('_login');
 
 Route::post('/logout',[AuthController::class,'logout'])->name('logout');
+Route::resource('post', GanapController::class)->middleware('auth');
 
 Route::get('/',function(){
     return view('auth.login');
