@@ -74,6 +74,18 @@ class GanapController extends Controller
     public function show($id)
     {
         //
+
+        /**
+         * 
+         * // Get the user who created a post
+            *$post = Post::find(1);
+           * $user = $post->user;
+
+           * // Get all posts by a specific user
+           * $user = User::find(1);
+           * $posts = $user->posts;
+                    * 
+         */
     }
 
     /**
