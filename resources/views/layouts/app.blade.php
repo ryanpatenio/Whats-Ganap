@@ -2,15 +2,28 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+    
+        <title>What's Ganap?</title>
+        <!-- Favicon-->
+        <link rel="icon" href="https://th.bing.com/th?id=OIF.6nvTvr%2fTIZgh84SldKBO1w&w=202&h=203&c=7&r=0&o=5&dpr=1.3&pid=1.7" type="image/x-icon">
+        
+        <!-- Favicon for other sizes (optional) -->
+        <link rel="icon" href="https://th.bing.com/th?id=OIF.6nvTvr%2fTIZgh84SldKBO1w&w=202&h=203&c=7&r=0&o=5&dpr=1.3&pid=1.7" sizes="32x32">
+        <link rel="icon" href="https://th.bing.com/th?id=OIF.6nvTvr%2fTIZgh84SldKBO1w&w=202&h=203&c=7&r=0&o=5&dpr=1.3&pid=1.7" sizes="16x16">
+        
+        <!-- Favicon for mobile -->
+        <link rel="apple-touch-icon" href="{{ asset('images/favicon.ico') }}">
+    
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    </head>
 
-    <title>OVMS</title>
-    <!-- Favicon-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 
 </head>
 
@@ -20,9 +33,9 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container px-5">
 
-                <a class="navbar-brand" href="/"><img
-                        src="https://cdn.pixabay.com/photo/2014/04/02/10/40/check-304167_1280.png" alt=""
-                        class="rounded-circle" style="width: 25px;"> OVMS</a>
+                <a class="navbar-brand" href="/home"><img
+                        src="https://th.bing.com/th?id=OIF.6nvTvr%2fTIZgh84SldKBO1w&w=202&h=203&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt=""
+                        class="rounded-circle" style="width: 25px;"> What's Ganap?</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation"><span

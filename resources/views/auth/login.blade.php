@@ -16,7 +16,7 @@
                     <div class="col-lg-8 col-xl-6">
 
                         {{-- <form id="contactForm" data-sb-form-api-token="API_TOKEN"> --}}
-                        <form method="POST" action="">
+                        <form method="POST" action="{{url('_login')}}">
                             @csrf
                             <!-- UserName input-->
                             <div class="form-floating mb-3">

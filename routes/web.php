@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\AuthController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,6 +22,10 @@ Route::get('/home', function () {
     return redirect('/'); // Redirect to login if not authenticated
 })->name('home');
 
+Route::post('/_register',[AuthController::class,'_register'])->name('_register');
+Route::post('/_login',[AuthController::class,'_login'])->name('_login');
+
+Route::post('/logout',[AuthController::class,'logout'])->name('logout');
 
 Route::get('/',function(){
     return view('auth.login');
