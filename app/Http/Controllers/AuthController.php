@@ -17,7 +17,18 @@ class AuthController extends Controller
     public function _login(Request $request){
         $credentials = $request->only('email','password');
 
-        if (Auth::attempt($credentials)) {
+        $remember = $request->has('remember'); // Check if 'remember' is checked
+
+        if (Auth::attempt($credentials, $remember)) {
+            // Set cookies if remember me is checked
+            if ($remember) {
+                cookie()->queue('email', $request->email, 5); // Store for 5 minutes
+                cookie()->queue('remember', true, 5);
+            } else {
+                cookie()->queue(cookie()->forget('email'));
+                cookie()->queue(cookie()->forget('remember'));
+            }
+
             return redirect()->intended('home');
         }
 
@@ -54,6 +65,10 @@ class AuthController extends Controller
     public function logout(Request $request)
     {
         Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
         return redirect()->route('login');
     }
 }
