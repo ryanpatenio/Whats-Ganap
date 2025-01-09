@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GanapController;
+use App\Http\Controllers\GoogleAuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,3 +38,7 @@ Route::get('/register',function(){
     return view('auth.register');
 
 })->name('register');
+
+//Google Auth
+Route::get('/google/auth',[GoogleAuthController::class,'redirect'])->name('google-auth');
+Route::get('/auth/google/call-back',[GoogleAuthController::class,'callback']);

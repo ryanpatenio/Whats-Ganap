@@ -4,6 +4,19 @@
     <!-- Page content-->
     <section class="py-5">
         <div class="container px-5">
+
+             <!-- Flash Messages -->
+            @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+            @endif
+
+            @if (session('error'))
+                <div class="alert alert-danger">
+                    {{ session('error') }}
+                </div>
+            @endif
             <!-- Contact form-->
             <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
                 <div class="text-center mb-5">
@@ -24,11 +37,11 @@
                                     name="email" type="email" value="{{ old('email') }}" placeholder="" required
                                     autocomplete="email" autofocus />
                                 <label for="username">Username</label>
-                                {{-- @error('email')
+                                @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror --}}
+                                @enderror
                             </div>
                             <!-- Password input-->
                             <div class="form-floating mb-3">
@@ -36,11 +49,11 @@
                                     type="password" placeholder="Enter your Password..." name="password" required
                                     autocomplete="current-password" />
                                 <label for="username">Password</label>
-                                {{-- @error('password')
+                                @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror --}}
+                                @enderror
 
                             </div>
                            
@@ -58,6 +71,13 @@
                                     </a>
                                 @endif --}}
                             </div>
+
+                            <div class="d-grid mt-3">
+                                <a href="{{ route('google-auth') }}" class="btn btn-danger">
+                                    <i class="bi bi-google"></i> Login with Google
+                                </a>
+                            </div>
+                            
                         </form>
                     </div>
                 </div>
